@@ -1,0 +1,108 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Somatic Machina Flipbook</title>
+    <style>
+        body {
+            background: #111;
+            margin: 0;
+            overflow: hidden;
+        }
+        #flipbook {
+            width: 90vw;
+            height: 90vh;
+            margin: auto;
+            position: relative;
+            top: 5vh;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+        .page {
+            width: 45vw;
+            height: 90vh;
+            background-size: cover;
+            background-position: center;
+            margin: 0 5px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.5);
+        }
+        .controls {
+            position: fixed;
+            bottom: 20px;
+            width: 100%;
+            text-align: center;
+            z-index: 10;
+        }
+        .controls button {
+            padding: 10px 20px;
+            font-size: 18px;
+            margin: 0 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="flipbook">
+<div class="page" style="background-image: url('flipbook_pages/page_001.png');"></div>
+<div class="page" style="background-image: url('flipbook_pages/page_002.png');"></div>
+<div class="page" style="background-image: url('flipbook_pages/page_003.png');"></div>
+<div class="page" style="background-image: url('flipbook_pages/page_004.png');"></div>
+<div class="page" style="background-image: url('flipbook_pages/page_005.png');"></div>
+<div class="page" style="background-image: url('flipbook_pages/page_006.png');"></div>
+<div class="page" style="background-image: url('flipbook_pages/page_007.png');"></div>
+<div class="page" style="background-image: url('flipbook_pages/page_008.png');"></div>
+<div class="page" style="background-image: url('flipbook_pages/page_009.png');"></div>
+<div class="page" style="background-image: url('flipbook_pages/page_010.png');"></div>
+<div class="page" style="background-image: url('flipbook_pages/page_011.png');"></div>
+<div class="page" style="background-image: url('flipbook_pages/page_012.png');"></div>
+<div class="page" style="background-image: url('flipbook_pages/page_013.png');"></div>
+<div class="page" style="background-image: url('flipbook_pages/page_014.png');"></div>
+<div class="page" style="background-image: url('flipbook_pages/page_015.png');"></div>
+<div class="page" style="background-image: url('flipbook_pages/page_016.png');"></div>
+<div class="page" style="background-image: url('flipbook_pages/page_017.png');"></div>
+<div class="page" style="background-image: url('flipbook_pages/page_018.png');"></div>
+<div class="page" style="background-image: url('flipbook_pages/page_019.png');"></div>
+<div class="page" style="background-image: url('flipbook_pages/page_020.png');"></div>
+<div class="page" style="background-image: url('flipbook_pages/page_021.png');"></div>
+<div class="page" style="background-image: url('flipbook_pages/page_022.png');"></div>
+<div class="page" style="background-image: url('flipbook_pages/page_023.png');"></div>
+<div class="page" style="background-image: url('flipbook_pages/page_024.png');"></div>
+<div class="page" style="background-image: url('flipbook_pages/page_025.png');"></div>
+<div class="page" style="background-image: url('flipbook_pages/page_026.png');"></div>
+<div class="page" style="background-image: url('flipbook_pages/page_027.png');"></div>
+<div class="page" style="background-image: url('flipbook_pages/page_028.png');"></div>
+<div class="page" style="background-image: url('flipbook_pages/page_029.png');"></div>
+<div class="page" style="background-image: url('flipbook_pages/page_030.png');"></div>
+<div class="page" style="background-image: url('flipbook_pages/page_031.png');"></div>
+<div class="page" style="background-image: url('flipbook_pages/page_032.png');"></div>
+<div class="page" style="background-image: url('flipbook_pages/page_033.png');"></div>
+<div class="page" style="background-image: url('flipbook_pages/page_034.png');"></div>
+
+    </div>
+    <div class="controls">
+        <button onclick="prevPage()">Previous</button>
+        <button onclick="nextPage()">Next</button>
+    </div>
+    <script>
+        let currentPage = 0;
+        const pages = document.querySelectorAll('.page');
+        function showPages() {
+            pages.forEach((p, i) => {
+                p.style.display = (i === currentPage || i === currentPage + 1) ? 'block' : 'none';
+            });
+        }
+        function prevPage() {
+            if (currentPage > 0) currentPage -= 2;
+            showPages();
+        }
+        function nextPage() {
+            if (currentPage + 2 < pages.length) currentPage += 2;
+            showPages();
+        }
+        showPages();
+    </script>
+</body>
+</html>
