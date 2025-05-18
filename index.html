@@ -75,7 +75,8 @@
       autoSize: true
     });
 
-    pageFlip.loadFromImages(pageImages);
+    const pages = pageImages.map(src => ({ src }));
+pageFlip.loadFromImages(pages);
   </script>
 </body>
 </html>
