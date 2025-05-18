@@ -7,18 +7,16 @@
   <script src="https://cdn.jsdelivr.net/npm/page-flip/dist/page-flip.browser.min.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/page-flip/dist/page-flip.browser.min.css" />
   <style>
-    body {
+    html, body {
       margin: 0;
       padding: 0;
       background: #111;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
+      height: 100%;
+      overflow: hidden;
     }
     #flipbook {
-      width: 90vw;
-      height: 90vh;
+      width: 100vw;
+      height: 100vh;
     }
   </style>
 </head>
@@ -67,12 +65,14 @@
     const flipbook = document.getElementById("flipbook");
 
     const pageFlip = new St.PageFlip(flipbook, {
-      width: 800,
-      height: 600,
+      width: 1000,
+      height: 750,
       size: "stretch",
-      maxShadowOpacity: 0.5,
       showCover: false,
-      mobileScrollSupport: false
+      usePortrait: false,
+      maxShadowOpacity: 0.5,
+      mobileScrollSupport: false,
+      autoSize: true
     });
 
     pageFlip.loadFromImages(pageImages);
